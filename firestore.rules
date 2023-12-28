@@ -1,0 +1,17 @@
+    
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Custom default security rules for FireCMS. Modifying this rule will the usage of the FireCMS.
+    match /{document=**} {
+      allow read, write: if request.auth.token.fireCMSUser;
+    }
+    match /blog/{blogId} {
+      allow get: true
+      allow list: true
+      allow create: false
+      allow update: false
+      allow delete: false
+    }
+  }
+}

@@ -138,8 +138,4 @@ jobs:
       - run: firebase experiments:enable webframeworks
 
       - name: Deploy
-        run: firebase deploy -f -P ${{ vars.FIREBASE_PROJECT_ID }} --non-interactive
-        env:
-          NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.FIREBAE_API_KEY }}
-          NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ vars.FIREBASE_AUTH_DOMAIN }}
-          NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${{ vars.FIREBASE_PROJECT_ID }}
+        run: firebase deploy --only hosting --project=${{ vars.FIREBASE_PROJECT_ID }}

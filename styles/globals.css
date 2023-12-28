@@ -41,14 +41,14 @@ article {
   background: #fff;
   margin: 2rem;
   padding: 2rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 article:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 footer {

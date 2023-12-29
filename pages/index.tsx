@@ -11,7 +11,7 @@ const Home: React.FC<HomeProps> = ({ blogs }) => {
   return (
     <div>
       {blogs.map((blog) => {
-        const blogContentHtml = blog.content.map(c => c.value).join('');
+        const blogContentHtml = blog.content.map((c) => c.value).join('');
         return (
           <div key={blog.id}>
             <article>
@@ -31,7 +31,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   const sanitizedBlogs = blogs.map((blog) => ({
     ...blog,
-    content: blog.content.map((c) => ({ ...c, value: xss(c.value) })), 
+    content: blog.content.map((c) => ({ ...c, value: xss(c.value) })),
   }));
 
   return { props: { blogs: sanitizedBlogs } };

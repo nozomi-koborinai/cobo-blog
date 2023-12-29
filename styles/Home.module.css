@@ -1,19 +1,19 @@
 .blogList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.blogCard {
+  flex: 1 1 calc(50% - 16px);
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
   .blogCard {
-    flex: 1 1 calc(50% - 16px); 
-    border: 1px solid #ccc;
-    padding: 16px;
-    border-radius: 8px; 
-    margin-bottom: 16px;
+    flex-basis: 100%;
   }
-  
-  @media (max-width: 768px) {
-    .blogCard {
-      flex-basis: 100%;
-    }
-  }
+}
